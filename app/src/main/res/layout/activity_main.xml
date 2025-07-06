@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lịch khám"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Ngày khám mong muốn -->
+    <TextView
+        android:id="@+id/labelDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày khám mong muốn *"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="12/07/2024"
+        android:drawableStart="@android:drawable/ic_menu_my_calendar"
+        app:layout_constraintTop_toBottomOf="@id/labelDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Giờ khám -->
+    <TextView
+        android:id="@+id/labelTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giờ khám"
+        app:layout_constraintTop_toBottomOf="@id/buttonDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/buttonTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="06:11"
+        app:layout_constraintTop_toBottomOf="@id/labelTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Lý do khám -->
+    <TextView
+        android:id="@+id/labelReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lý do khám *"
+        app:layout_constraintTop_toBottomOf="@id/buttonTime"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="mệt mỏi"
+        android:drawableStart="@android:drawable/ic_menu_edit"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/labelReason"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Hình thức khám -->
+    <TextView
+        android:id="@+id/labelType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loại hình thức khám"
+        app:layout_constraintTop_toBottomOf="@id/editReason"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khám dịch vụ thường - 100.000đ" />
+
+        <RadioButton
+            android:id="@+id/radioOvertime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Khám dịch vụ ngoài giờ - 200.000đ" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
